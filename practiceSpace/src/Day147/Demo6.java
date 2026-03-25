@@ -1,0 +1,82 @@
+package Day147;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
+
+public class Demo6 {
+
+	private static final int MAXN = (int) 2e6 + 1;
+
+	private static int[] queue = new int[MAXN];
+	private static int left;
+	private static int right;
+
+	private static int n, m;
+	private static int[] arr = new int[MAXN];
+
+	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private static StreamTokenizer st = new StreamTokenizer(reader);
+	private static PrintWriter writer = new PrintWriter(new OutputStreamWriter(System.out));
+
+	public static void main(String[] args) throws IOException {
+		while (st.nextToken() != StreamTokenizer.TT_EOF) {
+			n = (int) st.nval;
+			st.nextToken();
+			m = (int) st.nval;
+			for (int i = 0; i < n; i++) {
+				st.nextToken();
+				arr[i] = (int) st.nval;
+			}
+			build();
+
+			pushTail(0);
+			writer.println(0);
+			for (int i = 1; i < n; i++) {
+				while (!isEmpty() && peekFront() < i - m) {
+					popFront();
+				}
+				writer.println(arr[peekFront()]);
+				while (!isEmpty() && arr[peekTail()] >= arr[i]) {
+					popTail();
+				}
+				pushTail(i);
+			}
+		}
+		writer.flush();
+		writer.close();
+		reader.close();
+	}
+
+	private static void build() {
+		left = right = 0;
+	}
+
+	private static void pushTail(int x) {
+		queue[right++] = x;
+	}
+
+	private static int peekFront() {
+		return queue[left];
+	}
+
+	private static boolean isEmpty() {
+		return left == right;
+	}
+
+	private static int peekTail() {
+		return queue[right - 1];
+	}
+
+	private static void popTail() {
+		right--;
+	}
+
+	private static void popFront() {
+		left++;
+	}
+	
+}
