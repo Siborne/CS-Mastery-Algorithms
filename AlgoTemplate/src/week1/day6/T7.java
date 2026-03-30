@@ -17,16 +17,23 @@ public class T7 {
 		while (st.nextToken() != StreamTokenizer.TT_EOF) {
 			int[][] grid = new int[15][10];
 
-			for (int i = 0; i < grid.length; i++) {
-				for (int j = 0; j < grid[0].length; j++) {
+			grid[0][0] = (int) st.nval;
+
+			for (int j = 1; j < 10; j++) {
+				st.nextToken();
+				grid[0][j] = (int) st.nval;
+			}
+
+			for (int i = 1; i < 15; i++) {
+				for (int j = 0; j < 10; j++) {
 					st.nextToken();
 					grid[i][j] = (int) st.nval;
 				}
 			}
 
 			int[][] piece = new int[4][4];
-			for (int i = 0; i < piece.length; i++) {
-				for (int j = 0; j < piece[0].length; j++) {
+			for (int i = 0; i < 4; i++) {
+				for (int j = 0; j < 4; j++) {
 					st.nextToken();
 					piece[i][j] = (int) st.nval;
 				}
@@ -34,52 +41,33 @@ public class T7 {
 
 			st.nextToken();
 			int startCol = (int) st.nval;
+			int col = startCol - 1;
 
-			int actualLeft = 0;
-			while (actualLeft < 4) {
-				boolean allZero = true;
-				for (int i = 0; i < 4; i++) {
-					if (piece[i][actualLeft] == 1) {
-						allZero = false;
-						break;
-					}
-				}
-				if (!allZero) {
+			int finalRow = -1;
+			for (int row = 0; row <= 15; row++) {
+				if (!canPlace(grid, piece, row, col)) {
+					finalRow = row - 1;
 					break;
 				}
-				actualLeft++;
 			}
 
-			int pieceCol = startCol + actualLeft;
-
-			int actualRight = 3;
-			while (actualRight >= 0) {
-				boolean allZero = true;
-				for (int i = 0; i < 4; i++) {
-					if (piece[i][actualRight] == 1) {
-						allZero = false;
-						break;
+			for (int i = 0; i < 4; i++) {
+				for (int j = 0; j < 4; j++) {
+					if (piece[i][j] == 1) {
+						int gridRow = finalRow + i;
+						int gridCol = col + j;
+						if (gridRow >= 0 && gridRow < 15 && gridCol >= 0 && gridCol < 10) {
+							grid[gridRow][gridCol] = 1;
+						}
 					}
 				}
-				if (!allZero) {
-					break;
-				}
-				actualRight--;
+			}
 
-				int finalRow = -1;
-				for (int row = 0; row <= 15; row++) {
-					if (!canPlace(grid, piece, row, pieceCol)) {
-						finalRow = row - 1;
-						break;
-					}
+			for (int i = 0; i < 15; i++) {
+				for (int j = 0; j < 10; j++) {
+					writer.print(grid[i][j] + (j == 9 ? "" : " "));
 				}
-
-				if (finalRow == -1) {
-					finalRow = 11;
-				}
-				
-				
-				
+				writer.println();
 			}
 		}
 		writer.flush();
@@ -87,4 +75,21 @@ public class T7 {
 		reader.close();
 	}
 
+	private static boolean canPlace(int[][] grid, int[][] piece, int row, int col) {
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (piece[i][j] == 1) {
+					int gridRow = row + i;
+					int gridCol = col + j;
+					if (gridRow >= 15)
+						return false;
+					if (gridCol < 0 || gridCol >= 10)
+						return false;
+					if (gridRow >= 0 && grid[gridRow][gridCol] == 1)
+						return false;
+				}
+			}
+		}
+		return true;
+	}
 }
