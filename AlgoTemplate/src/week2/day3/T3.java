@@ -6,9 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
-import java.util.Iterator;
 
-public class T1 {
+public class T3 {
 
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private static StreamTokenizer st = new StreamTokenizer(reader);
@@ -17,36 +16,23 @@ public class T1 {
 	public static void main(String[] args) throws IOException {
 		while (st.nextToken() != StreamTokenizer.TT_EOF) {
 			int n = (int) st.nval;
-			st.nextToken();
-			int p = (int) st.nval;
-			int[] arr = new int[n + 2];
+			int[] arr = new int[n + 1];
+			int[] f = new int[n + 1];
 			for (int i = 1; i <= n; i++) {
 				st.nextToken();
 				arr[i] = (int) st.nval;
 			}
-			int[] brr = new int[n + 2];
-			for (int i = 1; i <= n; i++) {
-				brr[i] = arr[i] - arr[i - 1];
-			}
 
-			while (p-- > 0) {
-				st.nextToken();
-				int x = (int) st.nval;
-				st.nextToken();
-				int y = (int) st.nval;
-				st.nextToken();
-				int z = (int) st.nval;
-				brr[x] += z;
-				brr[y + 1] -= z;
-			}
-			int min = Integer.MAX_VALUE;
-			for (int i = 1; i <= n; i++) {
-				arr[i] = arr[i - 1] + brr[i];
-				if (min > arr[i]) {
-					min = arr[i];
+			f[1] = arr[1];
+
+			for (int i = 2; i <= n; i++) {
+				if (arr[i] <= arr[i - 1]) {
+					f[i] = f[i - 1];
+				} else {
+					f[i] = f[i - 1] + (arr[i] - arr[i - 1]);
 				}
 			}
-			writer.println(min);
+			writer.println(f[n]);
 		}
 		writer.flush();
 		writer.close();

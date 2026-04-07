@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 import java.util.Iterator;
 
-public class T1 {
+public class T5 {
 
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private static StreamTokenizer st = new StreamTokenizer(reader);
@@ -18,35 +18,36 @@ public class T1 {
 		while (st.nextToken() != StreamTokenizer.TT_EOF) {
 			int n = (int) st.nval;
 			st.nextToken();
-			int p = (int) st.nval;
-			int[] arr = new int[n + 2];
-			for (int i = 1; i <= n; i++) {
-				st.nextToken();
-				arr[i] = (int) st.nval;
-			}
-			int[] brr = new int[n + 2];
-			for (int i = 1; i <= n; i++) {
-				brr[i] = arr[i] - arr[i - 1];
-			}
+			int m = (int) st.nval;
 
-			while (p-- > 0) {
+			int[] diff = new int[n + 1];
+			int[] ans = new int[n + 1];
+			int[] l = new int[m + 1];
+			int[] r = new int[m + 1];
+			for (int i = 1; i <= m; i++) {
 				st.nextToken();
-				int x = (int) st.nval;
+				l[i] = (int) st.nval;
 				st.nextToken();
-				int y = (int) st.nval;
-				st.nextToken();
-				int z = (int) st.nval;
-				brr[x] += z;
-				brr[y + 1] -= z;
-			}
-			int min = Integer.MAX_VALUE;
-			for (int i = 1; i <= n; i++) {
-				arr[i] = arr[i - 1] + brr[i];
-				if (min > arr[i]) {
-					min = arr[i];
+				r[i] = (int) st.nval;
+				diff[l[i]]++;
+				if (r[i] + 1 <= n) {
+					diff[r[i] + 1]--;
 				}
 			}
-			writer.println(min);
+
+			int sum = 0;
+			for (int i = 1; i <= n; i++) {
+				diff[i] += diff[i - 1];
+				if (diff[i] == 0) {
+					sum++;
+				}
+				ans[i] = ans[i - 1] + (diff[i] == 1 ? 1 : 0);
+			}
+
+			for (int i = 1; i <= m; i++) {
+				writer.println(ans[r[i]] - ans[l[i] - 1] + sum);
+			}
+
 		}
 		writer.flush();
 		writer.close();
