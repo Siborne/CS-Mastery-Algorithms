@@ -1,74 +1,89 @@
 <div align="center">
 
+<img src="./assets/bannerImage.png" alt="CS-Mastery-Algorithms Banner" width="100%" />
+
 # CS-Mastery-Algorithms
 
-**The record warehouse of personal Java algorithm learning road ~**
+**个人 Java 算法学习之路与代码仓库**
 
-Personal Java algorithm learning notes and code archive.
+[![Java](https://img.shields.io/badge/Language-Java-orange.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com)
+[![Algorithms](https://img.shields.io/badge/Category-Algorithms-00599C.svg?style=for-the-badge)](#)
+[![Status](https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![JDK](https://img.shields.io/badge/JDK-8-ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](#)
+[![Problems](https://img.shields.io/badge/Problems-1600+-brightgreen.svg?style=for-the-badge)](#)
+[![Platforms](https://img.shields.io/badge/Platforms-9-lightgrey.svg?style=for-the-badge)](#)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=for-the-badge)](#)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-Java-orange.svg?style=for-the-badge&logo=openjdk" alt="Language" />
-  <img src="https://img.shields.io/badge/Category-Algorithms-00599C.svg?style=for-the-badge" alt="Category" />
-  <img src="https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge" alt="Status" />
-</p>
-
-<p align="center">
-  <a href="./i18n/README.en.md">English</a> | <a href="./i18n/README.zh-CN.md">中文</a>
-</p>
+<a href="./i18n/README.en.md">English</a> | <a href="./i18n/README.zh-CN.md">中文</a>
 
 </div>
 
 ---
 
-### 📖 Introduction
+## 简介
 
-This repository records my Java algorithm learning path, including templates, OJ practice, course exercises, and contest code.
+这是一个记录 Java 算法学习全过程的仓库，涵盖 **算法模板**、**OJ 刷题**、**课程练习** 与 **竞赛实战** 代码，共计 **1600+ 道题目**，覆盖 **9 大平台**。
 
-- 🧠 Language: Java
-- 📚 Scope: templates + problem solutions + contest practice
-- 🎯 Goal: continuous accumulation, easy review, and structured organization
+## 目录结构
 
-### 🗂️ Directory Structure
+### OJ 与竞赛
 
-The project is grouped by platform and training source for quick navigation.
+| 目录 | 说明 |
+|------|------|
+| `codeforces_contest/` | Codeforces 比赛 |
+| `hdu/` | HDU Online Judge |
+| `lanqiao_contest/` | 蓝桥杯 |
+| `luogu_contest/` | 洛谷比赛与测试 |
+| `newCoder/` | 牛客网 |
+| `pta/` | PTA |
+| `chuanzhi/` | 传智杯 |
+| `jitiaosai/` | 机调赛 |
+| `Robocom/` | 睿抗机器人比赛 |
 
-#### 🏁 OJ and Contests
+### 课程与模板
 
-- `codeforces_contest/`: Codeforces contests
-- `hdu/`: HDU Online Judge practice
-- `lanqiao_contest/`: Lanqiao Cup problems
-- `luogu_contest/`: Luogu contests and tests
-- `newCoder/`: NowCoder practice
-- `pta/`: PTA practice
-- `chuanzhi/`: ChuanZhi Cup
-- `jitiaosai/`: Jitiao contest
-- `Robocom/`: RoboCom contest
+| 目录 | 说明 |
+|------|------|
+| `AlgoTemplate/` | 算法模板（按周/天组织） |
+| `JavaStudy_ZuoChengYun/` | 左程云算法课程代码 |
 
-#### 🧩 Courses and Templates
+### 日常训练
 
-- `AlgoTemplate/`: algorithm templates
-- `JavaStudy_ZuoChengYun/`: Zuo Chengyun course code
+| 目录 | 说明 |
+|------|------|
+| `practiceSpace/` | 按天练习记录（Day1–Day149） |
+| `matiji/` | 码蹄集专项训练 |
 
-#### 🗓️ Daily Practice
+## 使用方式
 
-- `practiceSpace/`: day-by-day practice
-- `matiji/`: Matiji training sets
+```bash
+# 编译单个文件
+javac -d practiceSpace/bin practiceSpace/src/Day1/Demo1.java
 
-### 🚀 How To Use
+# 运行
+java -cp practiceSpace/bin Day1.Demo1
+```
 
-1. Enter the folder for a target platform or topic.
-2. Check source files in `src/`.
-3. Check compiled output in `bin/` when available.
+## 技术栈
 
-### 📌 Conventions
+- **语言**：Java 8
+- **IDE**：Eclipse
+- **依赖**：无第三方库，仅使用 Java 标准库
+- **I/O**：`Scanner` / `BufferedReader` + `StreamTokenizer`
 
-- Keep folder names stable and readable.
-- Group code by platform and contest round whenever possible.
-- Update this README when adding a new major module.
+## 维护约定
+
+- 保持目录命名稳定、清晰
+- 尽量按平台和场次归档代码
+- 新增主要模块时同步更新 README
 
 ---
 
-## 🌐 Language Files
+<div align="center">
 
-- English full version: [i18n/README.en.md](./i18n/README.en.md)
-- 中文完整版: [i18n/README.zh-CN.md](./i18n/README.zh-CN.md)
+**如果觉得有帮助，给个 Star 吧！**
+
+![Star History](https://api.star-history.com/svg?repos=Siborne/CS-Mastery-Algorithms&type=Date)
+
+</div>

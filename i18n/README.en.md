@@ -1,67 +1,89 @@
 <div align="center">
 
+<img src="../assets/bannerImage.png" alt="CS-Mastery-Algorithms Banner" width="100%" />
+
 # CS-Mastery-Algorithms
 
-**The record warehouse of personal Java algorithm learning road ~**
+**Personal Java Algorithm Learning Journey & Code Archive**
 
-Personal Java algorithm learning notes and code archive.
+[![Java](https://img.shields.io/badge/Language-Java-orange.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com)
+[![Algorithms](https://img.shields.io/badge/Category-Algorithms-00599C.svg?style=for-the-badge)](#)
+[![Status](https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](../LICENSE)
+[![JDK](https://img.shields.io/badge/JDK-8-ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](#)
+[![Problems](https://img.shields.io/badge/Problems-1600+-brightgreen.svg?style=for-the-badge)](#)
+[![Platforms](https://img.shields.io/badge/Platforms-9-lightgrey.svg?style=for-the-badge)](#)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=for-the-badge)](#)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-Java-orange.svg?style=for-the-badge&logo=openjdk" alt="Language" />
-  <img src="https://img.shields.io/badge/Category-Algorithms-00599C.svg?style=for-the-badge" alt="Category" />
-  <img src="https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge" alt="Status" />
-</p>
-
-<p align="center">
-  <a href="../README.md">Home</a> | <a href="./README.en.md">English</a> | <a href="./README.zh-CN.md">中文</a>
-</p>
+<a href="../README.md">Home</a> | <a href="./README.en.md">English</a> | <a href="./README.zh-CN.md">中文</a>
 
 </div>
 
 ---
 
-## 📖 Introduction
+## Introduction
 
-This repository records my Java algorithm learning path, including templates, OJ practice, course exercises, and contest code.
+This repository records my complete Java algorithm learning journey, covering **algorithm templates**, **OJ practice**, **course exercises**, and **contest solutions** — **1600+ problems** across **9 platforms**.
 
-- 🧠 Language: Java
-- 📚 Scope: templates + problem solutions + contest practice
-- 🎯 Goal: continuous accumulation, easy review, and structured organization
+## Directory Structure
 
-## 🗂️ Directory Structure
+### OJ & Contests
 
-The project is grouped by platform and training source for quick navigation.
+| Directory | Description |
+|-----------|-------------|
+| `codeforces_contest/` | Codeforces contests |
+| `hdu/` | HDU Online Judge |
+| `lanqiao_contest/` | Lanqiao Cup |
+| `luogu_contest/` | Luogu contests & tests |
+| `newCoder/` | NowCoder |
+| `pta/` | PTA |
+| `chuanzhi/` | ChuanZhi Cup |
+| `jitiaosai/` | Jitiao contest |
+| `Robocom/` | RoboCom contest |
 
-### 🏁 OJ and Contests
+### Courses & Templates
 
-- `codeforces_contest/`: Codeforces contests
-- `hdu/`: HDU Online Judge practice
-- `lanqiao_contest/`: Lanqiao Cup problems
-- `luogu_contest/`: Luogu contests and tests
-- `newCoder/`: NowCoder practice
-- `pta/`: PTA practice
-- `chuanzhi/`: ChuanZhi Cup
-- `jitiaosai/`: Jitiao contest
-- `Robocom/`: RoboCom contest
+| Directory | Description |
+|-----------|-------------|
+| `AlgoTemplate/` | Algorithm templates (organized by week/day) |
+| `JavaStudy_ZuoChengYun/` | Zuo Chengyun algorithm course code |
 
-### 🧩 Courses and Templates
+### Daily Practice
 
-- `AlgoTemplate/`: algorithm templates
-- `JavaStudy_ZuoChengYun/`: Zuo Chengyun course code
+| Directory | Description |
+|-----------|-------------|
+| `practiceSpace/` | Day-by-day practice (Day1–Day149) |
+| `matiji/` | Matiji training sets |
 
-### 🗓️ Daily Practice
+## Usage
 
-- `practiceSpace/`: day-by-day practice
-- `matiji/`: Matiji training sets
+```bash
+# Compile a single file
+javac -d practiceSpace/bin practiceSpace/src/Day1/Demo1.java
 
-## 🚀 How To Use
+# Run
+java -cp practiceSpace/bin Day1.Demo1
+```
 
-1. Enter the folder for a target platform or topic.
-2. Check source files in `src/`.
-3. Check compiled output in `bin/` when available.
+## Tech Stack
 
-## 📌 Conventions
+- **Language**: Java 8
+- **IDE**: Eclipse
+- **Dependencies**: None — Java standard library only
+- **I/O**: `Scanner` / `BufferedReader` + `StreamTokenizer`
 
-- Keep folder names stable and readable.
-- Group code by platform and contest round whenever possible.
-- Update this README when adding a new major module.
+## Conventions
+
+- Keep directory names stable and readable
+- Group code by platform and contest round
+- Update this README when adding a new major module
+
+---
+
+<div align="center">
+
+**Found it helpful? Give it a Star!**
+
+![Star History](https://api.star-history.com/svg?repos=Siborne/CS-Mastery-Algorithms&type=Date)
+
+</div>
