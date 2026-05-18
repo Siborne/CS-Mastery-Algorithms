@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git *)",
+      "Skill(superpowers:subagent-driven-development)",
+      "Skill(superpowers:writing-plans)",
+      "Bash(echo \"---exit: $?\")",
+      "Skill(superpowers:finishing-a-development-branch)",
+      "Bash(bash *)",
+      "Bash(git show *)",
+      "Bash(where gh *)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Read(//mnt/c/Program Files/GitHub CLI/**)",
+      "Skill(superpowers:writing-skills)",
+      "Read(//c/Users/90438/.claude/**)",
+      "Read(//c/Users/90438/.claude//**)",
+      "Bash(gh pr *)",
+      "Bash(/c/Program Files/GitHub CLI/gh pr *)",
+      "Bash(sort -t'y' -k2 -n)"
+    ]
+  }
+}
