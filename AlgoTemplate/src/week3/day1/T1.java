@@ -29,7 +29,7 @@ public class T1 {
 			}
 		}
 
-		System.out.println(!flag && l == 0 ? "Yes" : "Nor");
+		System.out.println(!flag && l == 0 ? "Yes" : "No");
 
 		reader.close();
 	}
