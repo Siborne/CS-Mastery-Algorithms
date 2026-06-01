@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 import java.util.Arrays;
 
-public class T9 {
+public class T11 {
 
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private static StreamTokenizer st = new StreamTokenizer(reader);
@@ -17,15 +17,21 @@ public class T9 {
 	public static void main(String[] args) throws IOException {
 		while (st.nextToken() != StreamTokenizer.TT_EOF) {
 			int n = (int) st.nval;
-			long[] arr = new long[2 * n];
-			for (int i = 0; i < 2 * n; i++) {
+			long[] arr = new long[n];
+			for (int i = 0; i < n; i++) {
 				st.nextToken();
-				arr[i] = (int) st.nval;
+				arr[i] = (long) st.nval;
 			}
 			Arrays.sort(arr);
 			long ans = 0;
-			for (int l = 0, r = 2 * n - 1; l < r; l++, r--) {
-				ans += arr[l] * arr[r];
+			for (int l = 0, r = n / 2; l < n / 2 && r < n;) {
+				if (arr[l] * 2 <= arr[r]) {
+					ans++;
+					l++;
+					r++;
+				} else {
+					r++;
+				}
 			}
 			writer.println(ans);
 		}
